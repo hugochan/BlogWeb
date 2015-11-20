@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <meta charset="UTF-8" /><title>By-talk</title>
+        <meta charset="UTF-8" /><title>Artificial Neural Network</title>
         <meta name="author" content="blog.hugochan.net">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -72,7 +72,7 @@
                 <div class="main-body-inner">
                     <section id="main">
                         <div class="main-body-header">
-                            <h1 class="header"><i class="icon" id="icon-category"></i>category: <em class="page-title-link">By-talk</em></h1>
+                            <h1 class="header">Article</h1>
                         </div>
                         <div class="main-body-content">
                             
@@ -80,71 +80,62 @@
 
 
 
-        <div class="article-row">
-
-    
 
 
+<article class="article article-single article-type-article" itemscope="" itemprop="blogarticle">
+    <div class="article-inner">
 
-<article class="article article-summary">
-<div class="article-summary-inner">
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Artificial Neural Network</h1>
+        </header>
 
-        <a href="/Religion/" class="thumbnail" style="height: 162.548076923077px;">
-            <span style="background-image:url(/images/religious.png)" alt="从宗教说起" class="thumbnail-image"></span>
-        </a>
+        <p class="article-byline">
+            <a href="/ANNs/" class="article-date">
+                <time datetime="2015-11-20T00:30:00.000Z" itemprop="datePublished">2015-11-20</time>
+            </a>
+        </p>
+        <div class="article-entry" itemprop="articleBody"><p><img alt="Artificial Neural Network" src="/images/artificial_neural_network.jpg" /></p>
+<p>Today’s topic is how to implement an <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">artificial neural network</a>.</p>
+<p>Well, what is an artificial neural network? First, let’s see what is a natural neural network. Look at this guy<sup>figure (a)</sup>. This is the source of humans’ intelligence which is called a natural neural network. We humans want to make machines mimic our intelligence, so we figure out an artificial neural network to mimic the natural neural network. The artificial neural network is so popular that we often drop the “artificial” and simply call it the neural network. You will find soon that neural networks try to mimic everything natural neural networks do, from construction to training.</p>
+<p><img alt="figure (a) natural neural network" src="/images/natural_neural_network.gif" /></p>
+<p>Let’s say now we are going to implement a neural network which can solve arithmetical problems. </p>
+<h2>How to construct a neural network</h2>
+<p>What shall we do first? First, we need to construct a neural network. Here we go! Look at the natural neural network, it has neurons, right? We copy it! </p>
+<p><img alt="figure (b) neural network" src="/images/neural_network.png" /></p>
+<p>These nodes in the neural network<sup>figure (b)</sup> are called artificial neurons, simply neurons. The edges denote connections between neurons. And the weights on edges represent the biological synaptic strengths in a natural neuron. Each input \(x_i\) is multiplied by its corresponding weight \(w_i\), then the product \(x_i⋅w_i\) is fed into the body of the neuron. The neuron adds up all the products for \(i = 1, …, m\). It looks like this:
+$$\mathbf{x} = (x_1, x_2, \cdots, x_m)$$
+$$\mathbf{w} = (w_1, w_2, \cdots, w_m)$$
+$$\mathbf{x}\mathbf{w} = x_1w_1 + x_2w_2 + \cdots + x_mw_m$$
+$$net = \mathbf{x}\mathbf{w}$$</p>
+<p>So far so good! If you are familiar with natural neural networks, you may find currently some important pieces are missing.</p>
+<p>First, somehow, a natural neuron always performs some complex process for the incoming electrochemical signals. Think about it. If your neurons just simply add up all the incoming signals, you cannot be so smart:-) Right? The question is how to mimic this behavior in our neural network. Any ideas? Note that any process is a mapping from the input to output, in mathematics, we call it what? Yes, function! Here, we define an activation function to simulate this behavior. Very often, we choose some nonlinear functions like the <a href="https://en.wikipedia.org/wiki/Sigmoid_function">sigmoid function</a> which is shown below:
+$$y = f(net)$$
+$$f(x) = \frac{1}{1 + e^{-x}}$$</p>
+<p>Another problem is in a natural neural network, there is always a threshold for the excitation of the neuron. That is to say, if the incoming signals are so weak, a natural neuron may ignore them. We can do the same thing in our neural network. That’s a simple trick in mathematics. We just need to simply add a constant term in the sum formula. It looks like this:
+$$\mathbf{x}\mathbf{w} = x_1w_1 + x_2w_2 + \cdots + x_mw_m + x_{m+1}w_{m+1}, ~~ where ~ x_{m+1}=1$$
+$$net = \mathbf{x}\mathbf{w}$$
+where the \(w_{m+1}\) is essentially the threshold.</p>
+<p>Well yet, we are almost done! Let’s now construct a 3-layers neural network which is the most common case.</p>
+<h2>The power of a neural network</h2>
+<p>Look at this neural network<sup>figure (c)</sup>, we have Ni inputs and No outputs. Thus we can always get something as long as we feed the network some inputs. A very good thing is as long as we have enough neurons in the second layer which is called a hidden layer, the neural network can approximate any function no matter how complex it would be. Very nice property! It means that the neural network can <strong>learn anything</strong> as long as it’s learnable.</p>
+<p><img alt="figure (c) 3-layers neural network" src="/images/3_layers_neural_network.gif" /></p>
+<h2>How to train a neural network</h2>
+<p>Then, let’s go to the next step. How to train a neural network to make it as smart as a natural neural network? Again, neural networks try to mimic everything natural neural networks do. Think about it. How do young children learn arithmetic? They learn from examples! They may need to practice hundreds of arithmetical problems before they are good at arithmetic. </p>
+<p>Neural networks do pretty much the same thing. They learn from training data. Every time a neural network makes a try, we supervise it, if it dose well, we encourage it; otherwise, we discourage it and update its weights. It may need to practice all the examples again and again until it never makes mistakes or only makes a few mistakes in these examples. Finally, we would say “as a neural network, you definitely have already learned arithmetic!”</p>
+<p>That’s the basic idea that how we implement a neural network. For a specific python implementation of a neural network, please click <a href="https://github.com/hugochan/ML-DM-Study-Notes/blob/master/neural%20networks/nn.py">here</a>.</p>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></div>
+        <footer class="article-footer">
+            <a data-url="http://blog.hugochan.net/ANNs/" class="article-share-link">Share</a>
 
-    <div class="article-meta">
-            <p class="category"><a class="article-category-link" href="/categories/by-talk">By-talk</a></p>
-        <p class="date"><time datetime="2015-03-03T00:13:55.108Z" itemprop="datePublished">2015-11-16</time></p>
+
+            <ul class="article-tag-list">
+                <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/computer_science">computer science</a></li>
+                <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/neural_network">neural network</a></li>
+            </ul>
+
+        </footer>
     </div>
-    <h2 class="article-title">
-        <a href="/Religion/" class="title">从宗教说起</a>
-    </h2>
-    <p class="article-excerpt">
-        
-&emsp;&emsp;
-科学、哲学、宗教，这三者之间有着千丝万缕的联系，且无一例外都关乎信仰。要厘清三者之间的关系，简单来说，至少得从两个角度来观察。若从所研究的对象来看，科学研究的是自然现象和规律，而哲学和宗教颇为一致，都致力于解答形而上的、具有终极意义的根本性问题；若从方法论来看，科学和哲学都是在人类理性的框架内认识和解决问题，而宗教讲求因信称义，在我看来颇为感性。正因如此，有人说科学研究
-    </p>
-</div>
 </article>
-
-
-
-
-    
-
-
-
-<article class="article article-summary">
-<div class="article-summary-inner">
-
-        <a href="/Hobbies/" class="thumbnail" style="height: 162.548076923077px;">
-            <span style="background-image:url(/images/peace.jpeg)" alt="让我心安的三件事" class="thumbnail-image"></span>
-        </a>
-
-    <div class="article-meta">
-            <p class="category"><a class="article-category-link" href="/categories/by-talk">By-talk</a></p>
-        <p class="date"><time datetime="2015-03-03T00:13:55.108Z" itemprop="datePublished">2015-11-15</time></p>
-    </div>
-    <h2 class="article-title">
-        <a href="/Hobbies/" class="title">让我心安的三件事</a>
-    </h2>
-    <p class="article-excerpt">
-        
-&emsp;&emsp;
-在这世上，有三件事能让我心安。有时我过于亢奋，或是过于失落了，
-如果这时做起其中任意一件事，我都能感受到一股力量让我安静下来，回归生命的平和。
-也许这个时候，我就接近周国平所谓的“生命的祥和”与“灵魂的安宁”了吧。我珍惜这种
-感觉，好在我能经常回来，原因就在于我能时常想起就做那三件事。
-&emsp;&emsp;
-这第一件事是读书。我从小书读不多，但却养成一种习惯，边读边
-    </p>
-</div>
-</article>
-
-
-        </div>
-
 
 
 

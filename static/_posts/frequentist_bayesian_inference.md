@@ -37,3 +37,6 @@ coverMeta: out
 
 ## 争论与较量
 正如唯物与唯心主义是两种不同的认识论，并无高下优劣之分。贝叶斯与频率学派也无高下优劣之分，它们都能为人们所用，目的都是认识世界。它们各有优劣势，频率学派计算简单，长期占据主流地位，贝叶斯学派随着近几十年计算能力的大幅提升，越来越受人们重视。理论上，当观察的结果集无穷大时，这两种思路的推理结论是一致的。而在小规模结果集上，贝叶斯学派则显示出了它的优势，其效果一般好于频率学派。
+
+#### 参考文献
+[[1] Bayesians and Frequentists - Models, Assumptions, and Inference](http://www.stat.ufl.edu/archived/casella/Talks/BayesRefresher.pdf)

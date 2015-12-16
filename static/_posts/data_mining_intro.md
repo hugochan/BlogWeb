@@ -16,7 +16,7 @@ coverMeta: out
 ---
 
 Did you ever try to look up papers on a specific topic but get overwhelmed by bunches of semi-related or non-related papers? The key problem here is...
-<!-- more --> <!-- excerpt -->
+ <!-- excerpt -->
 
 Did you ever try to look up papers on a specific topic but get overwhelmed by bunches of semi-related or non-related papers? The key problem here is “***we are drowning in information, but starved for knowledge.***” Information is not always useful. The knowledge behind it is what we really need. We may have tons of information, but cannot make any decision. The reason is simple. We don’t know how to use it since it becomes too large and complex for us to process.
 

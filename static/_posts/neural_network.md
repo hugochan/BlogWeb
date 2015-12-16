@@ -16,7 +16,7 @@ coverMeta: out
 ---
 
 Today’s topic is how to implement an [artificial neural network](https://en.wikipedia.org/wiki/Artificial_neural_network).Well, what is an artificial neural network? First, let’s see what is a natural neural network.
-<!-- more --> <!-- excerpt -->
+ <!-- excerpt -->
 
 Today’s topic is how to implement an [artificial neural network](https://en.wikipedia.org/wiki/Artificial_neural_network).
 

@@ -10,13 +10,14 @@ tags:
 - Bayesian Inference
 - Frequentist Inference
 description: 贝叶斯与频率学派
+thumbnailImagePosition: bottom
 coverImage: http://blog.hugochan.net/images/bayesian_frequentist_inference.jpg
 metaAlignment: center
 coverMeta: out
 ---
 
 我们知道，因果律是一切科学的基础。人类依靠因果律这一强大的思想武器，企图认识这个世界的本质。无奈，在这个大千世界，我们所能直接观察到的都是这个果……
-<!-- more --> <!-- excerpt -->
+<!-- excerpt -->
 
 
 ## 从因果律开始

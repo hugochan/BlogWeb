@@ -14,7 +14,7 @@ coverMeta: out
 ---
 
 我留不住所有的岁月 岁月却留住我 不曾为我停留的芬芳 却是我的春天……
-<!-- more --> <!-- excerpt -->
+ <!-- excerpt -->
 
 ## <center>一</center>
 <center>

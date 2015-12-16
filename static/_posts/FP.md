@@ -3,8 +3,10 @@ layout: post
 title: "浅谈函数式编程的世界观"
 date: 2015-11-15 0:30
 slug: Functional Programming
-categories: Computer Science
+categories: Thinking Beyond Technology
 tags: 
+- Thinking
+- Technology
 - Computer Science
 - Programming
 description: Functional programming

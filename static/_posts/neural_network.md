@@ -8,6 +8,7 @@ tags:
 - Computer Science
 - Artificial Intelligence
 - Neural Network
+- Technology
 description: Artificial Neural Network
 coverImage: http://blog.hugochan.net/images/artificial_neural_network.jpg
 metaAlignment: center

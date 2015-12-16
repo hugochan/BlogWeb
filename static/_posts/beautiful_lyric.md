@@ -8,7 +8,7 @@ tags:
 - By-talk
 - Music
 description: 如歌的美丽人生
-coverImage: http://blog.hugochan.net/images/story_of_life.jpg
+coverImage: http://blog.hugochan.net/images/beautify_lyric.jpg
 metaAlignment: center
 coverMeta: out
 ---

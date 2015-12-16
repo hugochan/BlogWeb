@@ -8,6 +8,7 @@ tags:
 - Computer Science
 - Artificial Intelligence
 - Data Mining
+- Technology
 description: Data Mining
 coverImage: http://blog.hugochan.net/images/data_mining.jpg
 metaAlignment: center

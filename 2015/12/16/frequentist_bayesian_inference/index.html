@@ -6,23 +6,20 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="ThinkAloud">
-    <title>Artificial Neural Network - ThinkAloud</title>
+    <title>贝叶斯与频率学派 - ThinkAloud</title>
     <meta name="author" content="Hugo Chan">
     
     
-    <meta name="description" content="Artificial Neural Network">
+    <meta name="description" content="贝叶斯与频率学派">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Artificial Neural Network">
-<meta property="og:url" content="http://blog.hugochan.net/2015/11/20/neural_network/index.html">
+<meta property="og:title" content="贝叶斯与频率学派">
+<meta property="og:url" content="http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/index.html">
 <meta property="og:site_name" content="ThinkAloud">
-<meta property="og:description" content="Artificial Neural Network">
-<meta property="og:image" content="http://blog.hugochan.net/images/natural_neural_network.gif">
-<meta property="og:image" content="http://blog.hugochan.net/images/neural_network.png">
-<meta property="og:image" content="http://blog.hugochan.net/images/3_layers_neural_network.gif">
-<meta property="og:updated_time" content="2015-12-16T04:16:02.000Z">
+<meta property="og:description" content="贝叶斯与频率学派">
+<meta property="og:updated_time" content="2015-12-16T04:17:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Artificial Neural Network">
-<meta name="twitter:description" content="Artificial Neural Network">
+<meta name="twitter:title" content="贝叶斯与频率学派">
+<meta name="twitter:description" content="贝叶斯与频率学派">
     
         <meta rel="publisher" content="https://plus.google.com/114357473231026680000"/>
     
@@ -32,8 +29,8 @@
     
     
     
-        <meta property="og:image" content="/2015/11/20/neural_network/http://blog.hugochan.net/images/artificial_neural_network.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://blog.hugochan.net/2015/11/20/neural_network/http://blog.hugochan.net/images/artificial_neural_network.jpg" />
+        <meta property="og:image" content="/2015/12/16/frequentist_bayesian_inference/http://blog.hugochan.net/images/bayesian_frequentist_inference.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/http://blog.hugochan.net/images/bayesian_frequentist_inference.jpg" />
     
     
     <!--STYLES-->
@@ -211,7 +208,7 @@
         <div class="post-header-cover
                     text-center
                     "
-             style="background-image:url('http://blog.hugochan.net/images/artificial_neural_network.jpg');"
+             style="background-image:url('http://blog.hugochan.net/images/bayesian_frequentist_inference.jpg');"
              data-behavior="3">
             
         </div>
@@ -227,19 +224,19 @@
         <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title" itemprop="headline">
-            Artificial Neural Network
+            贝叶斯与频率学派
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Nov 20 2015 00:30:00 GMT-0500">
+    <time itemprop="datePublished" content="Wed Dec 16 2015 00:30:00 GMT-0500">
 	
-		    Nov 20, 2015
+		    Dec 16, 2015
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Computer-Science/">Computer Science</a>
+    <a class="category-link" href="/categories/Thinking-Beyond-Technology/">Thinking Beyond Technology</a>
 
 
     
@@ -249,25 +246,13 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <!-- excerpt --></p>
-<p>Today’s topic is how to implement an <a href="https://en.wikipedia.org/wiki/Artificial_neural_network" target="_blank" rel="external">artificial neural network</a>.</p>
-<p>Well, what is an artificial neural network? First, let’s see what is a natural neural network. Look at this guy<sup>figure (a)</sup>. This is the source of humans’ intelligence which is called a natural neural network. We humans want to make machines mimic our intelligence, so we figure out an artificial neural network to mimic the natural neural network. The artificial neural network is so popular that we often drop the “artificial” and simply call it the neural network. You will find soon that neural networks try to mimic everything natural neural networks do, from construction to training.</p>
-<p><img src="http://blog.hugochan.net/images/natural_neural_network.gif" alt="figure (a) natural neural network"></p>
-<p>Let’s say now we are going to implement a neural network which can solve arithmetical problems. </p>
-<h2 id="How_to_construct_a_neural_network"><a href="#How_to_construct_a_neural_network" class="headerlink" title="How to construct a neural network"></a>How to construct a neural network</h2><p>What shall we do first? First, we need to construct a neural network. Here we go! Look at the natural neural network, it has neurons, right? We copy it! </p>
-<p><img src="http://blog.hugochan.net/images/neural_network.png" alt="figure (b) neural network"></p>
-<p>These nodes in the neural network<sup>figure (b)</sup> are called artificial neurons, simply neurons. The edges denote connections between neurons. And the weights on edges represent the biological synaptic strengths in a natural neuron. Each input \(x_i\) is multiplied by its corresponding weight \(w_i\), then the product \(x_i⋅w_i\) is fed into the body of the neuron. The neuron adds up all the products for \(i = 1, …, m\). It looks like this:<br>$$\mathbf{x} = (x_1, x_2, \cdots, x_m)$$<br>$$\mathbf{w} = (w_1, w_2, \cdots, w_m)$$<br>$$\mathbf{x}\mathbf{w} = x_1w_1 + x_2w_2 + \cdots + x_mw_m$$<br>$$net = \mathbf{x}\mathbf{w}$$</p>
-<p>So far so good! If you are familiar with natural neural networks, you may find currently some important pieces are missing.</p>
-<p>First, somehow, a natural neuron always performs some complex process for the incoming electrochemical signals. Think about it. If your neurons just simply add up all the incoming signals, you cannot be so smart:-) Right? The question is how to mimic this behavior in our neural network. Any ideas? Note that any process is a mapping from the input to output, in mathematics, we call it what? Yes, function! Here, we define an activation function to simulate this behavior. Very often, we choose some nonlinear functions like the <a href="https://en.wikipedia.org/wiki/Sigmoid_function" target="_blank" rel="external">sigmoid function</a> which is shown below:<br>$$y = f(net)$$<br>$$f(x) = \frac{1}{1 + e^{-x}}$$</p>
-<p>Another problem is in a natural neural network, there is always a threshold for the excitation of the neuron. That is to say, if the incoming signals are so weak, a natural neuron may ignore them. We can do the same thing in our neural network. That’s a simple trick in mathematics. We just need to simply add a constant term in the sum formula. It looks like this:<br>$$\mathbf{x}\mathbf{w} = x_1w_1 + x_2w_2 + \cdots + x_mw<em>m + x</em>{m+1}w<em>{m+1}, ~~ where ~~ x</em>{m+1}=1$$</p>
-<p>$$net = \mathbf{x}\mathbf{w}$$</p>
-<p>where the \(w_{m+1}\) is essentially the threshold.</p>
-<p>Well yet, we are almost done! Let’s now construct a 3-layers neural network which is the most common case.</p>
-<h2 id="The_power_of_a_neural_network"><a href="#The_power_of_a_neural_network" class="headerlink" title="The power of a neural network"></a>The power of a neural network</h2><p>Look at this neural network<sup>figure (c)</sup>, we have Ni inputs and No outputs. Thus we can always get something as long as we feed the network some inputs. A very good thing is as long as we have enough neurons in the second layer which is called a hidden layer, the neural network can approximate any function no matter how complex it would be. Very nice property! It means that the neural network can <strong>learn anything</strong> as long as it’s learnable.</p>
-<p><img src="http://blog.hugochan.net/images/3_layers_neural_network.gif" alt="figure (c) 3-layers neural network"></p>
-<h2 id="How_to_train_a_neural_network"><a href="#How_to_train_a_neural_network" class="headerlink" title="How to train a neural network"></a>How to train a neural network</h2><p>Then, let’s go to the next step. How to train a neural network to make it as smart as a natural neural network? Again, neural networks try to mimic everything natural neural networks do. Think about it. How do young children learn arithmetic? They learn from examples! They may need to practice hundreds of arithmetical problems before they are good at arithmetic. </p>
-<p>Neural networks do pretty much the same thing. They learn from training data. Every time a neural network makes a try, we supervise it, if it dose well, we encourage it; otherwise, we discourage it and update its weights. It may need to practice all the examples again and again until it never makes mistakes or only makes a few mistakes in these examples. Finally, we would say “as a neural network, you definitely have already learned arithmetic!”</p>
-<p>That’s the basic idea that how we implement a neural network. For a specific python implementation of a neural network, please click <a href="https://github.com/hugochan/ML-DM-Study-Notes/blob/master/neural%20networks/nn.py" target="_blank" rel="external">here</a>.</p>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<h2 id="u4ECE_u56E0_u679C_u5F8B_u5F00_u59CB"><a href="#u4ECE_u56E0_u679C_u5F8B_u5F00_u59CB" class="headerlink" title="从因果律开始"></a>从因果律开始</h2><p>我们知道，因果律是一切科学的基础。人类依靠因果律这一强大的思想武器，企图认识这个世界的本质。无奈，在这个大千世界，我们所能直接观察到的都是这个果，背后的因永远是隐藏起来的。而由果及因，过程中充满无数的陷阱。举个简单而有趣的例子，有一头猪，在它短暂一生的前99天里，它观察到主人对它无微不至，自己吃喝不愁，任它如何推理，都万万想不到第100天它竟被主人拉出去宰杀了。其实，我们面对这个未知世界的认知困境，本质上没有比这位猪兄的幸运多少。</p>
+<p>于是我们慢慢意识到，这种东一榔头西一棒槌、乱扯因果关系的思考方式，并不常常奏效。我们需要更深思熟虑一点，我们需要对复杂的外部世界进行建模，私以为建模其实就是<strong><em>抓住事物发展的主要矛盾，研究矛盾主体间的联系和作用</em></strong>。比如，我们对A事件的发生产生了兴趣，想研究研究，我们可能觉得事件B和C跟事件A有点关系（比如它们仨老是一块儿出现），于是设计了一个模型，让事件B和C经过怎么怎么一个过程，能驱动事件A。有了这个模型，我们就能通过对比模型的输出结果与现实世界的观测结果，验证或优化模型。正是通过这种日拱一卒的劲头，我们一路走到了今天。想想真为这些前人们感动。</p>
+<h2 id="u9891_u7387_u5B66_u6D3E"><a href="#u9891_u7387_u5B66_u6D3E" class="headerlink" title="频率学派"></a>频率学派</h2><p>不知什么时候起，我们对随机事件这类问题产生了兴趣。频率学派的观点是，<strong><em>随机事件的发生其背后一定有某种深层的产生机制，虽然产生的事件（果）本身是随机的，但这个机制（因）应该是确定的。</em></strong>用前面提到的方法论，我们首先要提出一个模型来模拟这种机制，但这个模型是待定的（模型参数未知），不过我们可以通过大量的观察结果（evidence）来推理（inference）出模型参数。我们这么做的原因正是我们相信，<strong><em>随机事件的发生是由其背后的机制决定的，虽然孤立的随机事件不能给我们太多信息，但大量的随机试验结果蕴含着这种机制的重要信息。</em></strong>一个最典型的例子就是抛硬币，抛一枚硬币，可正可反，但当进行大量抛硬币试验后，试验结果将“告诉”我们有关这枚硬币的一些重要信息（例如正反面是否均匀等）。总结一下，频率学派的典型思维是产生机制是确定的，机制产生的结果是随机的，但大量的随机结果蕴含着某种确定性，由此我们可以认识产生机制。</p>
+<h2 id="u8D1D_u53F6_u65AF_u5B66_u6D3E"><a href="#u8D1D_u53F6_u65AF_u5B66_u6D3E" class="headerlink" title="贝叶斯学派"></a>贝叶斯学派</h2><p>贝叶斯学派不这么看问题。他们爱提一个叫信念（belief）的概念，<strong>其本质是概率，表征人们对某一事件发生的相信程度。</strong>与频率学派正相反，他们认为，人们对产生机制的信念是不确定、可改变的，机制产生的结果（evidence）在发生以后却是确定的。他们从人类认知事物的一般过程角度出发，认为人们对产生机制的信念变化遵守这样一个过程。<strong><em>在看到任何机制产生的结果前，人们对此抱一个最初的信念（先验信念），然后人们陆陆续续看到了很多结果，再相应地更新信念（后验信念）。</em></strong>这一迭代的过程使得人们不断接近对机制本质的认识。</p>
+<p>举一个简单的例子，有一个外星人在一天夜里来到地球，他想弄清楚地球的太阳从哪边升起。首先，他大胆假设太阳从西边升起，这是他的先验信念。然后他开始仔细观察太阳的实际初升。第一天，他发现太阳竟从东边升起了，与他的先验假设不符，因此他稍稍降低了对此的信念。后面连着观察了99天，他发现无一例外太阳都从东边升起，他对原始假设的信念也降低到了新的低点。<strong>但注意，此时他并没有完全否定太阳从西边升起的可能性，只不过他认为这种可能性很低了。</strong>这是贝叶斯学派的特点。</p>
+<h2 id="u4E24_u79CD_u8BA4_u8BC6_u8BBA"><a href="#u4E24_u79CD_u8BA4_u8BC6_u8BBA" class="headerlink" title="两种认识论"></a>两种认识论</h2><p>贝叶斯与频率学派实际上代表了人类认识世界的两种思路。举一个不恰当的例子。频率学派的认识论好比唯物主义的观点，他们认为机制决定结果，虽然孤立的结果带有随机性，但大量随机试验的结果一定蕴含着机制的确定性信息。而贝叶斯学派的认识论有点像唯心主义的观点，他们最大的特点是以观察者为主体，观察者对机制的信念会随着观察结果而变，观察结果既然发生了便是确定的。<strong>注意，贝叶斯学派并没有声称机制是随机变化的，变化的是观察者对机制的信念。</strong>其实反过来一样的道理，唯心主义者也没有狂妄到认为外界真实世界随自己的意念而变，变的是外界世界在观察者内心的投影。</p>
+<h2 id="u4E89_u8BBA_u4E0E_u8F83_u91CF"><a href="#u4E89_u8BBA_u4E0E_u8F83_u91CF" class="headerlink" title="争论与较量"></a>争论与较量</h2><p>正如唯物与唯心主义是两种不同的认识论，并无高下优劣之分。贝叶斯与频率学派也无高下优劣之分，它们都能为人们所用，目的都是认识世界。它们各有优劣势，频率学派计算简单，长期占据主流地位，贝叶斯学派随着近几十年计算能力的大幅提升，越来越受人们重视。理论上，当观察的结果集无穷大时，这两种思路的推理结论是一致的。而在小规模结果集上，贝叶斯学派则显示出了它的优势，其效果一般好于频率学派。</p>
             
                 
 
@@ -279,7 +264,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Artificial-Intelligence/">Artificial Intelligence</a> <a class="tag tag--primary tag--small t-link" href="/tags/Computer-Science/">Computer Science</a> <a class="tag tag--primary tag--small t-link" href="/tags/Neural-Network/">Neural Network</a> <a class="tag tag--primary tag--small t-link" href="/tags/Technology/">Technology</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Bayesian-Inference/">Bayesian Inference</a> <a class="tag tag--primary tag--small t-link" href="/tags/Frequentist-Inference/">Frequentist Inference</a> <a class="tag tag--primary tag--small t-link" href="/tags/Technology/">Technology</a> <a class="tag tag--primary tag--small t-link" href="/tags/Thinking/">Thinking</a>
 
             </div>
         
@@ -288,7 +273,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/story_of_your_life/"  data-tooltip="你一生的故事">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -296,7 +281,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/19/data_mining_intro/" data-tooltip="Data Mining">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/15/beautiful_lyric/" data-tooltip="如歌的美丽人生">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -311,17 +296,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2015/11/20/neural_network/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2015/11/20/neural_network/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2015/11/20/neural_network/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -367,7 +352,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/story_of_your_life/"  data-tooltip="你一生的故事">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -375,7 +360,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/19/data_mining_intro/" data-tooltip="Data Mining">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/15/beautiful_lyric/" data-tooltip="如歌的美丽人生">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -390,17 +375,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2015/11/20/neural_network/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2015/11/20/neural_network/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2015/11/20/neural_network/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -426,17 +411,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2015/11/20/neural_network/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2015/11/20/neural_network/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2015/11/20/neural_network/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>

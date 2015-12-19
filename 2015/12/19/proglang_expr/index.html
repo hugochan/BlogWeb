@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="ThinkAloud">
+    <title>关于人类语言的思考 - ThinkAloud</title>
+    <meta name="author" content="Hugo Chan">
+    
+    
+    <meta name="description" content="关于人类语言的思考">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="关于人类语言的思考">
+<meta property="og:url" content="http://blog.hugochan.net/2015/12/19/proglang_expr/index.html">
+<meta property="og:site_name" content="ThinkAloud">
+<meta property="og:description" content="关于人类语言的思考">
+<meta property="og:updated_time" content="2015-12-19T07:10:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于人类语言的思考">
+<meta name="twitter:description" content="关于人类语言的思考">
+    
+        <meta rel="publisher" content="https://plus.google.com/114357473231026680000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/avatar.png"/>
+    
+    
+    
+        <meta property="og:image" content="/2015/12/19/proglang_expr/http://blog.hugochan.net/images/human_lang.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://blog.hugochan.net/2015/12/19/proglang_expr/http://blog.hugochan.net/images/human_lang.jpg" />
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-68269928-3']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">ThinkAloud</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="/assets/images/avatar.png"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/avatar.png"/>
+            </a>
+            <span class="sidebar-profile-name">Hugo Chan</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/hugochan" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://plus.google.com/114357473231026690535" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-google-plus"></i>
+                    <span class="sidebar-button-desc">Google Plus</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/in/whatshugo" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">LinkedIn</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-center
+                    "
+             style="background-image:url('http://blog.hugochan.net/images/human_lang.jpg');"
+             data-behavior="3">
+            
+        </div>
+
+            <div id="main" data-behavior="3"
+                 class="hasCover
+                        hasCoverMetaOut
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            关于人类语言的思考
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sat Dec 19 2015 01:30:00 GMT-0500">
+	
+		    Dec 19, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Thinking-Beyond-Technology/">Thinking Beyond Technology</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <!-- excerpt --></p>
+<p>人类的语言经历了从自然语言，到数学语言，再到计算机编程语言的发展历程。当然，这种时间上的列举顺序完全不隐含任何从原始到先进的影射，实际上这三类语言如今都在蓬勃发展中。我如此列举它们，只不过是因为人类确实在不同的文明阶段先后发明出了这三类语言而已。</p>
+<p>首先声明，我几乎不具备任何语言学专业基础。只不过恰好这三类语言我都有所接触，想必日后也会赖以为生计，所以有兴趣在这儿漫谈一番，权当作阶段性的札记。另外，在我写到这里时，头脑中尚不清楚这片文章将如何展开，姑且写下我对语言的思考过程吧。</p>
+<h2 id="u81EA_u7136_u8BED_u8A00"><a href="#u81EA_u7136_u8BED_u8A00" class="headerlink" title="自然语言"></a>自然语言</h2><p>我们先来谈谈一般意义上的语言，也就是人类的自然语言。自然语言在我们而言太过熟悉，特别是母语，在我们看来几乎是空气般的存在，重要却不易引起注意。至少在我看来，自然语言有几点令我惊讶之处。</p>
+<p>自然语言的起源问题令我着迷。我们的祖先是在怎样的漫长生存过程中发明了语言呢？从最简单的语气词或指代类名词，到复杂些的动词，再到更加抽象的概念性名词。特德姜在其短篇小说《你一生的故事》中细致地描绘了地球人和外星人交换彼此语言的过程，从中读者多少能体会到自然语言发展的不易。<strong><em>当然，自然语言其实可以分为语音和文字两套系统，即使对于同一语言，其语音和文字系统也可以相对比较独立，或者说语音和文字系统不见得必须有多紧密的联系。</em></strong>例如，历史上日本和北朝南韩都用中文书写系统，尽管他们有自己的语音系统。另一个显著的例子是，中国大地上各处多如牛毛的地方方言各自代表一种语音系统，尽管它们都对应相同的文字系统。再如，历史上也有民族很晚近的时候还没发明出自己的文字系统，比如当年横扫世界的蒙古族人民。</p>
+<p>我们知道，<strong><em>语音是时间的艺术，必须随着时间的流淌来展现自身，而文字是空间的艺术，理论上一段文字，书写者可以依任意次序在空间中书写，阅读者可以依任意次序在空间中阅读。</em></strong>语音和文字的这种时空差异，本质上类似于音乐和绘画的差异。但学过任何一种人类自然语言的读者都知道，<strong><em>人类的文字遵循着严格的时序关系。无论从上到下还是从左到右，文字都遵循着严格的，姑且称之为，一维线性关系，并将它大部分语意蕴藏在这种前后文连接关系中。</em></strong>我觉得这种现象的产生和人类的思维方式紧密相关，要知道人天生就是一种线性思维动物。这也难怪在《你一生的故事》中，外星人独特的思维方式致使他们发明了另一套截然不同的文字系统。</p>
+<p>自然语言的表达能力令我惊讶。这个世界上似乎找不到不能用自然语言描述的事物。整个世界都可以被自然语言所描述！<strong><em>自然语言描述世界不需要面面俱到，穷尽所有细节，这有点像绘画艺术，画家描绘这个世界从来不会在画作上挤满世上所有的东西，他们总是有层次、有取舍地加以描绘。自然语言对世界的描述也类似。</em></strong>而且，很神奇的是，有限的文字有时能描述出一个似乎无穷无尽的世界。就像那个经典的故事：从前有座山，山上有座庙，庙里有个老和尚，有一天，老和尚对小和尚讲起了一个故事：从前有座山，山上有座庙，庙里有个老和尚……无穷递归，永世不竭。</p>
+<p>我还在另一处见过自然语言对它表达能力的一次有趣展现。在《苏菲的世界》这本小说中，少校艾勃特，也就是小说中出现的《苏菲的世界》这本书的“作者”，在他的世界（也即他的书）中大肆向主人公苏菲展现他的强大掌控力，而这个世界中苏菲的哲学老师艾伯特却要设法分少校艾勃特的心，免得艾勃特偷听他和苏菲的谈话。令人吃惊的是，这个所谓分心的方法竟然是让苏菲多做一些特别的事（比如和飞鸟讲话啊，帮小熊回家啊什么的，当然这是我瞎举例的，因为具体事情记不清啦），因为这样少校艾勃特就要“分心”去写苏菲的这些经历而没时间去写苏菲和哲学老师的谈话了。看到这里是不是很崩溃，《苏菲的世界》的真实作者，挪威作家乔斯坦·贾德简直太有想象力了，他把语言对世界的描述能力展现到令人惊讶的地步。好吧，这其实是个嵌套的世界，我们读到的这本书叫《苏菲的世界》，书中的少校艾勃特写了本关于西方哲学史的小说送给女儿，书名就叫做《苏菲的世界》，在少校送给女儿的这本书中，主人公苏菲跟着她的哲学老师艾伯特（少校其实是他的原型）学哲学，然后有一天，苏菲在她的世界的一家书店里看到了一本书，也叫做《苏菲的世界》！和读者看到的这本一样，从头开始一五一十地记录着苏菲的生活。当然，这是作者玩了个把戏，弄出了递归的世界。这本书中还有很多神奇之处，很充分地展现了自然语言对世界的描述能力。</p>
+<p>如果没有自然语言，难以想象人类的大脑如何能有效地思考，也许就像一台没有操作系统的计算机，根本无法管理和调用自身资源吧。</p>
+<h2 id="u6570_u5B66_u8BED_u8A00"><a href="#u6570_u5B66_u8BED_u8A00" class="headerlink" title="数学语言"></a>数学语言</h2><p>数学语言是在文明发展到更高阶段时才产生的。也许最早的数学语言是阿拉伯数字？我觉得还不是，虽然它们是数学符号，但和一般性文字没有本质区别。最初的数学语言应该是由欧洲那些数学家们很缓慢地发明出来的。<strong><em>个人觉得，数学语言可以看做自然语言的一个子集，首先它高度提炼并符号化了自然语言中那些最本质、最抽象的概念、关系和操作，比如数、集合，大小、包含，加减乘除等等。你会发现，数学语言其实可以完全翻译成自然语言，只不过这样显得累赘且不直观而已。换言之，自然语言中包含着数学语言的对应物，而包含意味着自然语言还有很多数学语言没有的东西。</em></strong></p>
+<p>基本上数学语言是符号语言，而且几乎指的就是一种特定的文字系统，而非语音系统（我们用口语交流数学时，说的还不是自然语言，而且多半时候会显得有点不耐烦，因为太累赘啦）。<strong><em>相较于自然语言的文字系统，数学语言除了更符号化以外，在空间性上也更自由。一个数学表达式虽然依然必须遵循基本的空间顺序，但是相较文字，就书写和阅读顺序而言，还是有更大的自由度。</em></strong></p>
+<p>就描述世界的能力而言（描述世界可是数学一直以来的梦想），它在这点上的表现令人惊喜。只不过数学描述世界的角度或者方式和自然语言的不太一样。数学更关心世界的本质。<strong><em>它要在本质上描述这个世界最基本的结构和规律。其他一切都可由此生发。或者可以这样想，假如数学获得了这个世界的基本结构和规律的描述，那么这个世界的一切现象只不过是这些结构和规律的数学推演。这就是数学语言的生长力。</em></strong>因此，数学就已经成功地描述了这个世界！这个世界再大再繁杂，数学家都想在一张餐巾纸上搞定它。</p>
+<p>所以说，虽然数学语言脱胎于自然语言，但是凭借其高度抽象化、符号化以及强大的生长力，它完全独立于自然语言，并且一直试图以其独特的方式描述世界。</p>
+<h2 id="u7F16_u7A0B_u8BED_u8A00"><a href="#u7F16_u7A0B_u8BED_u8A00" class="headerlink" title="编程语言"></a>编程语言</h2><p>终于到了编程语言。它是最晚出现的，从第一门编程语言出现至今不过六七十年。但它又是发展最迅猛的，在今天，不断有新的编程语言涌现并投入使用。关于编程语言的本质，我以为有一句经典名言恰如其分地道出了真谛，<strong><em>编程语言是写给程序员看的，只不过刚好能在机器上运行。</em></strong>实际上，编程语言很好地汲取了自然语言和数学语言的优势。<strong><em>有的时候，它看上去像自然语言一样含义清晰而丰富，有时你会觉得自己像是在写或是读一篇文章。有的时候，它看上去像数学语言一样抽象、符号化，有着高度一致性，有时你会觉得自己像是在写数学表达式。</em></strong>实际上，如数学语言般简洁已经成为评价编程语言好坏的一条重要指标。而人们也发现在计算机程序和数学证明间存在内在关联，这种关联性被称为<a href="https://en.wikipedia.org/wiki/Curry–Howard_correspondence" target="_blank" rel="external">Curry-Howard correspondence</a>。关于编程语言的数学化特性，甚至有人觉得编程语言比数学语言还显得数学，王垠在《<a href="http://www.yinwang.org/blog-cn/2015/07/04/math/" target="_blank" rel="external">数学与编程</a>》一文中尝试论证了这点。</p>
+<p>编程语言当然需要描述世界，也具备描述世界的能力。电子游戏是编程语言描述世界的一个绝佳例子。据朋友说，有一款叫【上古卷轴】的游戏是这方面最好的例子。这款游戏强于其他游戏的一点是，它描述了一个几乎是无穷无尽的世界，许许多多的支线任务，各种隐藏起来的机关暗道。不过它还不是真的无穷无尽，不像在现实世界中，一个人的不同行为会蝴蝶效应般影响未来走向，所有的电子游戏包括上述这款还都无法做到这点。看来我们目前还无法像电影《黑客帝国》或《源代码》里那样用程序描述一个无穷世界。<strong><em>其根本原因还是程序的逻辑是人为设定的，这种人为设定大大限制了它的自由度。真实世界的输出（产生的结果）是无穷无尽的，但我们从未听说过一个程序它的输出是无穷无尽，即完全不可预知的。</em></strong></p>
+<p>当然，这样苛求编程语言似乎有点过分。即使是自然语言，也没法说能从这个层面描述世界。也许数学语言可以，因为它的生长性，数学家也许会声称只要给那个世界定下几条规矩，那个世界的一切故事都能由此推演。我不能确定这种猜想是否可行。但是我相信，如果数学语言办得到，那么编程语言也办得到，其实这么一来，自然语言也办得到。这三种语言之间理论上应该可以互相转译。然而需要注意，能描述和描述能力又是两码事。<strong><em>至少就这个任务而言，数学语言和编程语言的描述能力要强于自然语言，原因就在于它们的生长力。当然读者会质疑编程语言是否也有类似这种生长力，数学语言的生长过程即是一段数学证明，由于前面提到程序和数学证明间的等价性，我们自然推出编程语言也具备这种生长力。</em></strong></p>
+<p>这种生长力的一个现实点的体现很可能是机器学习算法。机器学习的目标是让机器具备自我学习的能力。举无人驾驶的例子，若按常规的解决方案，程序员可能需要编写极为冗长的代码，试图涵盖驾驶的方方面面，但其实以这种方式无论如何都无法穷尽所有驾驶状况。这种注定的失败就好比前述【上古卷轴】无法描述真正的无穷无尽的世界那种失败。但机器学习给了另一种思路，这种思路极富生长力。让机器自己学习驾驶，让程序自己学习“拓展”自己。</p>
+<p>关于编程语言描述世界，我还想多提一点。很多编程语言都提供lazy特性，这其实是一种很数学的特性。<strong><em>在数学上，当我们说无穷大或者无穷集合时，并不为此感到特别烦恼，比如担心数字太大写不下，集合太大枚举不完等等，真正头大的时刻是你在计算中需要用到它们的时刻。在编程中也一样，程序员可以在一行代码里写下一个逻辑表达式 A or B，lazy特性在此处保证，除非 A为 false，否则 B无需被计算即使 B可能是一个需要耗费巨大计算资源的复杂表达式。</em></strong>这种奇妙的特性让我想起了刘慈欣的小说《三体》中出现的那款很酷的【三体】游戏。这款游戏有两个特点。首先，它的自由度极大，比前述【上古卷轴】要大得多，它几乎描述了一个无穷无尽的世界。其次，我想它应该用到了lazy特性。游戏中那个三体世界，表面上看似简洁，实则在简洁的表象下蕴含着海量的信息。当主人公粗粗看一眼三体世界的太阳时，他看到了那一轮红日。但当他转而定睛细看时，他看到了太阳的更多细节。套用lazy特性的说法来解释，计算机只在需要的时候进行计算，完成对太阳的精细渲染。这种lazy特性可看做是编程语言强大描述能力的又一体现。当然，数学语言也有。</p>
+<h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><p>最后我也没想到，我在这个话题上说了这么多。这可能是我目前对这个话题的全部重要认识吧。我想，等我有新认识的时候，我会回来增加或者推翻些什么。</p>
+<h4 id="u53C2_u8003_u6587_u732E"><a href="#u53C2_u8003_u6587_u732E" class="headerlink" title="参考文献"></a>参考文献</h4><p><a href="https://en.wikipedia.org/wiki/Curry–Howard_correspondence" target="_blank" rel="external">[1] Curry-Howard correspondence</a><br><a href="http://www.yinwang.org/blog-cn/2015/07/04/math/" target="_blank" rel="external">[2] 数学与编程</a></p>
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Language/">Language</a> <a class="tag tag--primary tag--small t-link" href="/tags/Mathematical-Language/">Mathematical Language</a> <a class="tag tag--primary tag--small t-link" href="/tags/Natural-Language/">Natural Language</a> <a class="tag tag--primary tag--small t-link" href="/tags/Programming-Language/">Programming Language</a> <a class="tag tag--primary tag--small t-link" href="/tags/Technology/">Technology</a> <a class="tag tag--primary tag--small t-link" href="/tags/Thinking/">Thinking</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/16/frequentist_bayesian_inference/" data-tooltip="贝叶斯与频率学派">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2015/12/19/proglang_expr/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2015/12/19/proglang_expr/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2015/12/19/proglang_expr/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Hugo Chan. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/16/frequentist_bayesian_inference/" data-tooltip="贝叶斯与频率学派">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2015/12/19/proglang_expr/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2015/12/19/proglang_expr/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2015/12/19/proglang_expr/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2015/12/19/proglang_expr/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2015/12/19/proglang_expr/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2015/12/19/proglang_expr/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/avatar.png"/>
+        
+            <h4 id="about-card-name">Hugo Chan</h4>
+        
+            <h5 id="about-card-bio"><p>I badly needed a place to write down and share my thoughts. This is the best place!</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>PhD student at RPI</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Albany, New York Area
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'hugoblog1';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','R1SqaxEFspr-VUb1ZDoJ','2.0.0');
+    </script>
+
+
+</html>

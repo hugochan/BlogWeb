@@ -10,7 +10,6 @@ tags:
 - Bayesian Inference
 - Frequentist Inference
 description: 贝叶斯与频率学派
-thumbnailImagePosition: bottom
 coverImage: http://blog.hugochan.net/images/bayesian_frequentist_inference.jpg
 metaAlignment: center
 coverMeta: out

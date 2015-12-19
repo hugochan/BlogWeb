@@ -8,7 +8,7 @@ tags:
 - Thinking
 - Technology
 - Computer Science
-- Programming
+- Programming Language
 description: Functional programming
 coverImage: http://blog.hugochan.net/images/fp1.jpg
 coverSize: full

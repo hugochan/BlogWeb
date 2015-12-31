@@ -12,13 +12,12 @@ tags:
 - Mathematical Language
 - Programming Language
 description: 关于人类语言的思考
-thumbnailImagePosition: bottom
 coverImage: http://blog.hugochan.net/images/human_lang.jpg
 metaAlignment: center
 coverMeta: out
 ---
 
-人类语言经历了从自然语言，到数学语言，再到计算机编程语言的发展历程。当然，这种时间上的列举顺序完全不隐含任何从原始到先进的影射，实际上这三类语言如今都在蓬勃发展中。
+人类语言经历了从自然语言，到数学语言，再到计算机编程语言的发展历程。当然，这种时间上的列举顺序完全不隐含任何从原始到先进的影射……
 <!-- excerpt -->
 
 人类的语言经历了从自然语言，到数学语言，再到计算机编程语言的发展历程。当然，这种时间上的列举顺序完全不隐含任何从原始到先进的影射，实际上这三类语言如今都在蓬勃发展中。我如此列举它们，只不过是因为人类确实在不同的文明阶段先后发明出了这三类语言而已。

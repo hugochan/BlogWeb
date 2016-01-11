@@ -8,8 +8,7 @@ tags:
 - By-talk
 - Life
 description: 我想要的生活
-thumbnailImagePosition: bottom
-coverImage: http://blog.hugochan.net/images/the_wanted_life.jpg
+coverImage: http://blog.hugochan.net/images/the_wanted_life.png
 metaAlignment: center
 coverMeta: out
 ---

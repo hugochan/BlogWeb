@@ -16,7 +16,7 @@ metaAlignment: center
 coverMeta: out
 ---
 
-How to choose a good model is always a big problem for machine learning technologies.
+How to choose a good model is always a big problem for machine learning...
 <!-- excerpt -->
 
 

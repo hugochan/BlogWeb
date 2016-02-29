@@ -10,13 +10,13 @@ tags:
 - Technology
 - Artificial Intelligence
 description: Source of Intelligence
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/intelligence.png
 metaAlignment: center
 coverMeta: out
 ---
 
-今天听了一场认知科学系办的研讨会，一个博士生介绍了她最近的一项工作，大致内容是设计了一个会玩俄罗斯方块的专家系统。虽然我此去的主要任务是蹭午饭，不过我对认知科学还是有兴趣的。
+今天听了一场认知科学系办的研讨会，一个博士生介绍了她最近的一项工作，大致内容是设计了一个会玩俄罗斯方块的专家系统。虽然我此去的主要任务是蹭午饭，不过……
 <!-- excerpt -->
 
 

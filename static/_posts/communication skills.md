@@ -9,7 +9,7 @@ tags:
 - By-talk
 - Communication
 description: Communication Skills
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/communication.png
 metaAlignment: center
 coverMeta: out
@@ -25,7 +25,7 @@ Well, we all use paper towers every day, the speaker showed us his way to use pa
 
 Second important rule here is do NOT overwhelm your audience. What I like about the speaker is he only gave two keywords to audience: shake and fold. Shake means you shake your hands to get rid of water, while fold means you fold paper towels and wipe your hands. It’s pretty much simple. It should be as you don’t want to overwhelm your audience.
 
-Actually, there’re many other skills we can learn from that short video. To not overwhelm you, I just mention one more skill he used. Repetition! The magic of repetition is it makes people more likely to keep something in mind and even accept it. There’re many ways to do repetition. The speaker showed us two of them. One is just repeating those keywords again and again.  The other is doing the action, again and again. If you watch the video, you’ll find he repeated for more than 5 times. That’s crazy, but really useful.
+Actually, there’re many other skills we can learn from that short video. To not overwhelm you, I just mention one more skill he used. Repetition! The magic of repetition is it makes people more likely to keep something in mind and even accept it. There’re many ways to do repetition. The speaker showed us two of them. One is just repeating those keywords again and again. The other is doing the action, again and again. If you watch the video, you’ll find he repeated for more than 5 times. That’s crazy, but really useful.
 
 In order to verify what I said, let’s watch the video. You’ll find how the speaker attracted people in the first time, gave out two keywords and repeated them again and again.
 

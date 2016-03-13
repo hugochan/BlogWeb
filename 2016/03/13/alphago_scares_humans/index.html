@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="ThinkAloud">
+    <title>AlphaGo赢了，我们该害怕些什么？ - ThinkAloud</title>
+    <meta name="author" content="Hugo Chan">
+    
+    
+    <meta name="description" content="AlphaGo赢了，我们该害怕些什么？">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="AlphaGo赢了，我们该害怕些什么？">
+<meta property="og:url" content="http://blog.hugochan.net/2016/03/13/alphago_scares_humans/index.html">
+<meta property="og:site_name" content="ThinkAloud">
+<meta property="og:description" content="AlphaGo赢了，我们该害怕些什么？">
+<meta property="og:updated_time" content="2016-03-13T07:37:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AlphaGo赢了，我们该害怕些什么？">
+<meta name="twitter:description" content="AlphaGo赢了，我们该害怕些什么？">
+    
+        <meta rel="publisher" content="https://plus.google.com/114357473231026680000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/avatar.png"/>
+    
+    
+    
+        <meta property="og:image" content="/2016/03/13/alphago_scares_humans/http://blog.hugochan.net/images/alphago.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://blog.hugochan.net/2016/03/13/alphago_scares_humans/http://blog.hugochan.net/images/alphago.jpg" />
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-68269928-3']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">ThinkAloud</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="/assets/images/avatar.png"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/avatar.png"/>
+            </a>
+            <span class="sidebar-profile-name">Hugo Chan</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/hugochan" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://plus.google.com/114357473231026690535" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-google-plus"></i>
+                    <span class="sidebar-button-desc">Google Plus</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/in/whatshugo" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">LinkedIn</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-center
+                    "
+             style="background-image:url('http://blog.hugochan.net/images/alphago.jpg');"
+             data-behavior="3">
+            
+        </div>
+
+            <div id="main" data-behavior="3"
+                 class="hasCover
+                        hasCoverMetaOut
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            AlphaGo赢了，我们该害怕些什么？
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun Mar 13 2016 01:00:00 GMT-0500">
+	
+		    Mar 13, 2016
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Thinking-Beyond-Technology/">Thinking Beyond Technology</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <!-- excerpt --></p>
+<h2 id="u80CC_u666F"><a href="#u80CC_u666F" class="headerlink" title="背景"></a>背景</h2><p>近日，AlphaGo连下三城，在5局制的围棋人机大战中锁定胜局。比赛正式进入“垃圾”时间，仅剩的悬念是人类冠军李世石能否扳回一城，挽回人类棋手的最后尊严。其实类似事件早有预演，早在1997年，IBM的超级计算机“深蓝”第一次击败国际象棋大师卡斯帕罗夫。2006年，人类最后一次打败顶尖的国际象棋AI。在AlphaGo横空出世以前，AI不遗余力地在各种棋类游戏中挑战人类智力。只不过这一次，战火终于蔓延到了世人公认的人类智力的高地——围棋。</p>
+<p>笔者关注这则新闻并不是站在一个围棋爱好者的立场。事实上，笔者与围棋的交集甚少。儿时在朋友家学过几盘棋，看过一部叫做“围棋少年”的动画片，仅此而已。但作为一个人工智能爱好者，笔者特别关注这件事，既是好奇目前最顶尖的AI技术能在实战中达到的高度，也是好奇这件事带来的社会效应。站在第一点来看，我对这个结果毫不意外，这是人工智能理论多年积淀的自然结果，从AlphaGo开发者披露的算法框架来看，这个结果也合情合理；我更愿意站在第二点来思考这件事，我更关注这件事的社会意义，关注它对人类的未来意味着什么？</p>
+<h2 id="u56F4_u68CB_u5BB3_u6015_u4E86_u5417"><a href="#u56F4_u68CB_u5BB3_u6015_u4E86_u5417" class="headerlink" title="围棋害怕了吗"></a>围棋害怕了吗</h2><p>动画片“围棋少年”中浓墨重彩地渲染了这样一个大场景，日本天才棋手登陆中原，横扫四方，中国围棋界面临“灭顶之灾”，就在这时，中方天才棋手横空出世，力挽狂澜，挫败了那个骄横的日本棋手。类比目前的事态，这个故事的现实版本是AlphaGo横行天下，人类棋手节节败退，人类围棋界面临“灭顶之灾”。如果我们看长远趋势的话，AI彻底击败人类围棋界即使不在今天，也在可以预见的不远将来。人类对围棋的认识是几千年漫长积淀的结果，而以AlphaGo为代表的AI则站在人类的肩膀上，以一日千里的强大计算和学习能力不断增进对围棋的“认识”。打败人类冠军只是第一步，AlphaGo也不能代表整个AI阵营，完全可以设想未来的围棋AI不但能赢棋，而且还真正“懂棋”，换言之，能产生知识、发展围棋理论。如此一来，人类棋手的地位自然被边缘化了。</p>
+<p>但对于围棋而言，这个结局还不是最糟的。最糟的结局是围棋被“破解”了。也就是说围棋AI最后发现了围棋作为一项智力游戏的一个隐藏极深的“bug”，即存在一种策略使下棋一方能在实战中立于不败之地。这是围棋真正的终结。我们知道玩魔方是有诀窍的，天下没有拼不成的魔方，也许AlphaGo们有一天会告诉我们，天下没有赢不了（至少不输）的围棋。如此一来，未来的围棋会不会成为另一个魔方呢，穷尽了变化，只供人们自娱自乐，不再是往日那个让历代棋手费劲脑力的高级智力运动。</p>
+<h2 id="u5929_u4E0B_u4E4B_u5927_uFF0C_u4F55_u6B62_u56F4_u68CB"><a href="#u5929_u4E0B_u4E4B_u5927_uFF0C_u4F55_u6B62_u56F4_u68CB" class="headerlink" title="天下之大，何止围棋"></a>天下之大，何止围棋</h2><p>如果仅仅失去围棋这一块高地，我们还不算输得太惨。我们还有几块更稳固的高地，其中之一就是，数学！让AI研究数学，目前看来，仍难于上青天。早在六十多年前，公式推演（让计算机自动推演数学公式）的研究就开始了，但进展缓慢。何况公式推演还不是数学的全部。<strong><em>问题在于，计算机的强项在于计算，而非抽象思考</em></strong>（而数学是最需要这种能力的）。它可以按照人类设定的算法，完成一系列很复杂的计算，但是不会在此过程中有任何“想法”，从这个层面上来说，它的智力还不如一个小学生。即使是AlphaGo这样的高级围棋AI，它赢得了人类冠军，但是要让它像人类大师那样输出围棋方面的知识和经验，它办不到。它只能给你一堆没有具体意义的权值数据，这就是它学围棋的成果。它学习围棋的过程就是训练一组极为庞大的权值网络，或者从数学上理解，拟合一个高维空间的函数。这就是目前最顶级AI的现状。它们能下棋，能识别图片、语音，能驾驶汽车、飞机，但它们输出不了知识，因为它们不“懂”。也许读者会说，权值网络也许是知识存在的另一种形式呢，知识为什么非要以人类能理解的方式（比如语言和文字）存在和表达呢？也对。人类间以语言和文字进行知识的交流，AI间为什么不能通过权值网络进行沟通呢？所以这个问题的可能答案是，人类希望AI以我们的方式输出知识，但AI并不以此为意。</p>
+<p>纵使无法输出知识不是什么大问题，<strong><em>目前的AI还有一个致命缺陷，缺乏通用性</em></strong>。人类智能的一个令人惊讶之处在于，它的通用性。一个人可以学下棋，学音乐，学文学，也可以学数学、学物理、学计算机，总之，人类有一种对一切现象和知识进行抽象思考的能力。人类的伟大在于全面发展。我们是下棋下得巨好的提琴手，是文章写得很棒的工程师，是烹饪技术一流的科学家……围棋AI只会下棋，它要干点别的，得先换个“大脑”。如果把AI机器人也当成一个物种的话，这样的物种“生存能力”低下，还无法对人类构成威胁。</p>
+<p>其实上述两个问题在一定层面上是搅在一起的。AI无法输出知识，很大程度上受限于它们的“思考”和“学习”方式很不像人类。<strong><em>虽然深度神经网络技术尝试模拟人类大脑的工作原理，但是目前还只是学到了皮毛。问题倒不是它把人脑工作方式看得太机械化了，笔者也愿意相信存在一幅统一的人脑“工作原理图”，但总感觉目前的深度神经网络只是在“机械”层面模拟了人脑，在“功能”层面得到了一定突破，但仍差得很远，至少它还没捕捉到人类智能中的推理和归纳能力。</em></strong>而一旦AI捕捉到了这层能力，就等于补上了智力上的最大短板，全面超越人类智力的奇点或许就会在那一刻降临。而在这种情况下，AI自然而然也补齐了通用性的短板。</p>
+<p>令人“高兴”的事，人类科学家们真的在不遗余力地做着这方面的研究。在深度学习技术不断带给我们惊喜的同时，贝叶斯学习方法是另一个不容小觑的方向。<strong><em>贝叶斯理论是人类最重要的理论之一，它描述了我们对一件事的发生概率的估计依赖于我们对相关的一系列事件的概率估计这一基本现实，因此它天然适合做推理和归纳之类的事情</em></strong>——事实上，人类从来都是贝叶斯理论的最大使用群体，我们每个人都在生活中有意或无意地使用它。贝叶斯理论对于AI的重要性根植于推理和归纳对于人类智能的重要性（有兴趣的读者可以看看<a href="http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">贝叶斯与频率学派</a>和<a href="http://blog.hugochan.net/2016/01/16/induction_generalization/">漫谈归纳与泛化</a>）。那么是否大脑就是基于贝叶斯理论工作的呢？贝叶斯理论是否将补齐人工智能的最大短板呢？有没有一种可能性将深度学习和贝叶斯理论结合起来呢？（如果大脑真的是这么工作的话，我们就有希望复制出这种智力）这些问题都是通往智能的奥秘之路上可以预见的路障。<strong><em>我们唯有通晓了智能的奥秘，才能开发出真正强大、同时也真正可能威胁到我们自身的AI。</em></strong>如果你和笔者一样相信，人类智能是“可解”（可以被认识）的话，那么你也应该相信终有一日这些研究成果会被运用在AI领域，最后赋予AI以完整的人类思考能力。</p>
+<p>今日的AI界进入了第二个春天。学术界在沉寂多年后迎来了最大突破，工业界为此如痴如醉，不惜挥金如土地加大投入。我们的研究人员中有正在研究让计算机识别乃至（语义层面上）看懂图片的，让计算机理解人类文字的，让计算机玩智力游戏的，让计算机读懂人类表情的……计算机会的越多，就越像人类。</p>
+<h2 id="u6211_u4EEC_u5230_u5E95_u6015_u4EC0_u4E48"><a href="#u6211_u4EEC_u5230_u5E95_u6015_u4EC0_u4E48" class="headerlink" title="我们到底怕什么"></a>我们到底怕什么</h2><p>有学者提出过一个“递弱代偿”假说，核心观点是人类在演化过程中“越来越弱”，所以搞出了很多东西“替代”和“补偿”自身的不足。这个假说颇受争议，在此笔者只想借用“递弱”的概念。作为万物之灵的人类，曾经自诩上帝最完美的作品，自诩身处宇宙的中心，自诩拥有最高贵的灵性……然后一次次被现实“打脸”。现在我们发现自己只是宇宙130多亿年漫长演化的偶然产物，不过是时空长河里的沧海一粟，也许只是这个星球的匆匆过客。哎，多么痛的领悟！Anyway，至少我们可能是宇宙中最“聪明”的物种。我们跑步跑不过猎豹，潜水潜不过海豚，上天还得靠飞机，我们智力最高总行吧。因为我们智力高，所以我们发明了高铁，发明了潜艇，发明了火箭，发明了一切“补足”我们的短板，最后还是甩开其他物种几何级数条街。智力是我们最后的高地！我们要严守住这一高地。</p>
+<p>然而六十多年前，我们提出了AI的设想。其实计算机在“智力”的某些板块上早就超越了人类，比如它们算得比我们快、比我们准，不像我们那么容易犯错误，它们记忆力强等等。但我们丝毫不在意这种级别的挑战。谁会嫉妒一个计算机的计算能力呢？它们还不是我们自己发明的，还不是为我们所用，而这恰恰是人类智力的伟大体现。即使是下棋无敌的围棋AI，基于一样的理由，我们也没那么嫉妒。我们最怕的是，AI不听话，威胁到我们。我们开发的系统也会有不听话的时候，但那是系统故障，那不一样；我们养的宠物也会有不听话的时候，但那显然也不一样。AI的不听话可能是系统性的，不会是偶然的系统故障那么简单。我们若想赋予AI一切人类的智力因素，最后不得不赋予它们（自我）意识。理论上，既要让AI像人类一样思考，又要让它们绝对服从于人类，可能是个天大的矛盾，因为人类可是这个星球上最不懂得臣服的物种，人类的思维里从来都有批判反抗的基因。即使我们在AI的底层写下最深刻的指令“绝对维护人类群体的利益”，这就一定不会有后顾之忧了吗？即使不考虑人类内部敌人篡改指令，恶意使用AI力量犯罪，AI作为一个像人类一样具备独立思考能力的族群，就不会自我反思进而怀疑某些最深刻的信念吗？<strong><em>人类能从上帝的怀抱挣脱，AI就一定不会从人类的怀抱挣脱吗？</em></strong></p>
+<h2 id="u6211_u4EEC_u8BE5_u5982_u4F55_u5BF9_u5F85AI"><a href="#u6211_u4EEC_u8BE5_u5982_u4F55_u5BF9_u5F85AI" class="headerlink" title="我们该如何对待AI"></a>我们该如何对待AI</h2><p>这个星球上从来没有发生过一个非生命族群威胁一个有生命族群的案例。笔者更不想过早地宣扬某些末世言论。只是如何对待AI实在需要我们有史以来最大的智慧。人类研究AI的脚步一旦迈出就不会有停下的可能，这个话题太具有吸引力了，这既是学术界的梦想，也是工业界的梦想，或许是整个人类的梦想。<strong><em>我们目前正大踏步地行进在开阔地带，却无法预知什么时候该放慢脚步，小心避开潜在雷区。</em></strong>人类不可能停止对真理的追求，随着我们对这个世界的认识不断深入，我们手中的武器会变得越来越强大，核弹、生化武器等是目前我们眼中的大规模杀伤性武器，以后基因技术、纳米技术包括AI等一定会把新的大杀器交到我们手中，如何不引火自焚有时比发明这些技术更需要智慧。而AI是其中最特殊的，<strong><em>因为在这个问题上，我们博弈的对象不再仅是自身，坐在谈判桌对面的可能是一个同样拥有独立意识、和我们截然不同、能力超出我们很多，却不一定要忠于人类群体的厉害角色。</em></strong></p>
+<p><strong><em>版权所有，转载请注明出处。</em></strong></p>
+<h4 id="u53C2_u8003_u6587_u7AE0"><a href="#u53C2_u8003_u6587_u7AE0" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="http://blog.hugochan.net/2015/12/16/frequentist_bayesian_inference/">[1] 贝叶斯与频率学派</a><br><a href="http://blog.hugochan.net/2016/01/16/induction_generalization/">[2] 漫谈归纳与泛化</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA3OTgzMzUzOA==&amp;mid=402823905&amp;idx=1&amp;sn=1d33abfa136b66825a545549357aa164#wechat_redirect" target="_blank" rel="external">[3] 阿法狗们会取代人类吗？</a></p>
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Artificial-Intelligence/">Artificial Intelligence</a> <a class="tag tag--primary tag--small t-link" href="/tags/Technology/">Technology</a> <a class="tag tag--primary tag--small t-link" href="/tags/Thinking/">Thinking</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/28/communication skills/" data-tooltip="Communication skills">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/03/13/alphago_scares_humans/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/03/13/alphago_scares_humans/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/03/13/alphago_scares_humans/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Hugo Chan. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/28/communication skills/" data-tooltip="Communication skills">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/03/13/alphago_scares_humans/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/03/13/alphago_scares_humans/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/03/13/alphago_scares_humans/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/03/13/alphago_scares_humans/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/03/13/alphago_scares_humans/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/03/13/alphago_scares_humans/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/avatar.png"/>
+        
+            <h4 id="about-card-name">Hugo Chan</h4>
+        
+            <h5 id="about-card-bio"><p>I badly needed a place to write down and share my thoughts. This is the best place!</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>PhD student at RPI</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Albany, New York Area
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'hugoblog1';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','R1SqaxEFspr-VUb1ZDoJ','2.0.0');
+    </script>
+
+
+</html>

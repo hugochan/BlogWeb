@@ -10,7 +10,7 @@ tags:
 - Technology
 - Artificial Intelligence
 description: AlphaGo赢了，我们该害怕些什么？
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/alphago.jpg
 metaAlignment: center
 coverMeta: out

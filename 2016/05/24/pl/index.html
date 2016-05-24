@@ -6,20 +6,20 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="ThinkAloud">
-    <title>Can AlphaGo pass the Turing test? - ThinkAloud</title>
+    <title>Two ways of thinking about programming language - ThinkAloud</title>
     <meta name="author" content="Hugo Chan">
     
     
-    <meta name="description" content="Can AlphaGo pass the Turing test?">
+    <meta name="description" content="Two ways of thinking about programming language">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Can AlphaGo pass the Turing test?">
-<meta property="og:url" content="http://blog.hugochan.net/2016/05/21/turing_test/index.html">
+<meta property="og:title" content="Two ways of thinking about programming language">
+<meta property="og:url" content="http://blog.hugochan.net/2016/05/24/pl/index.html">
 <meta property="og:site_name" content="ThinkAloud">
-<meta property="og:description" content="Can AlphaGo pass the Turing test?">
-<meta property="og:updated_time" content="2016-05-24T14:08:53.000Z">
+<meta property="og:description" content="Two ways of thinking about programming language">
+<meta property="og:updated_time" content="2016-05-24T14:19:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Can AlphaGo pass the Turing test?">
-<meta name="twitter:description" content="Can AlphaGo pass the Turing test?">
+<meta name="twitter:title" content="Two ways of thinking about programming language">
+<meta name="twitter:description" content="Two ways of thinking about programming language">
     
         <meta rel="publisher" content="https://plus.google.com/114357473231026680000"/>
     
@@ -29,8 +29,8 @@
     
     
     
-        <meta property="og:image" content="/2016/05/21/turing_test/http://blog.hugochan.net/images/turing_test.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://blog.hugochan.net/2016/05/21/turing_test/http://blog.hugochan.net/images/turing_test.jpg" />
+        <meta property="og:image" content="/2016/05/24/pl/http://blog.hugochan.net/images/pl.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://blog.hugochan.net/2016/05/24/pl/http://blog.hugochan.net/images/pl.jpg" />
     
     
     <!--STYLES-->
@@ -208,7 +208,7 @@
         <div class="post-header-cover
                     text-center
                     "
-             style="background-image:url('http://blog.hugochan.net/images/turing_test.jpg');"
+             style="background-image:url('http://blog.hugochan.net/images/pl.jpg');"
              data-behavior="3">
             
         </div>
@@ -224,13 +224,13 @@
         <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title" itemprop="headline">
-            Can AlphaGo pass the Turing test?
+            Two ways of thinking about programming language
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat May 21 2016 22:00:00 GMT-0400">
+    <time itemprop="datePublished" content="Tue May 24 2016 11:00:00 GMT-0400">
 	
-		    May 21, 2016
+		    May 24, 2016
     	
     </time>
     
@@ -246,12 +246,14 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <!-- excerpt --></p>
-<p>A few months ago, Google AI machine AlphaGo defeated the leading player in Go Li Sedol in the man-machine war. People were surprised at the superb skills AlphaGo showed. One may ask is artificial intelligence really coming, will it surpass our own? </p>
-<p>In order to answer these questions, we need to trace back to the fundamental question, that is, can machines like AlphaGo think? Well, that’s a knotty question as “think” is hard to define. Around 60 years ago, Alan Turing who is widely considered to be the father of artificial intelligence proposed the same question, “Can machines think?” He proposed a pragmatic framework to answer such a difficult philosophical question. This framework is often called Turing test which is what we’re going to discuss today. Has any of you heard of Turing test before? Don’t worry! I promise you’ll know more about it soon.</p>
-<p>As we said, “think” is hard to define, Turing replaced the original question with a new one, which I would rephrase as “Can machines imitate a human?” Basically, you could regard the Turing test as a test of a machine’s ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human.</p>
-<p>Let’s see how we do a Turing test. Assume there’re two players and an interrogator. Player A is a human while player B is a computer. The role of the interrogator is to determine which is a human and which is a computer by making text-only conversations with each player separately.<br>If the interrogator cannot distinguish them at most time, the computer is considered to pass the Turing test. And we claim this computer can think like a human.</p>
-<p>Now, going back to our original question “Can machines like AlphaGo think?”, can we do a Turing test on AlphaGo? Yes! If you watch the way AlphaGo plays Go, it’s quite similar to how humans do it. Actually, AlphaGo does better than most human players. In this case, AlphaGo absolutely passed the Turing test as there is no way for us to figure out whether we’re playing Go with a human or machine. However, I claim that AlphaGo should not be considered to pass the Turing test for two reasons. First, AlphaGo knows nothing but playing Go. In other words, it’s not a general thinking machine. Second, although AlphaGo is a master in terms of Go skills, does it really understand the philosophy of Go? If an interrogator asks AlphaGo for some intuitions or thoughts of Go, can it answer well and pass the test? Probably not.</p>
-<p>Well, in this short article, I introduced the basic idea of the Turing test and how it works. We together applied it in a real problem.</p>
+<p>Even at the early stage of programming language when von Neumann languages were monopolistic, <a href="https://en.wikipedia.org/wiki/John_Backus" target="_blank" rel="external">John Backus</a> began to challenge this convention and think about some fundamental problems of programming language. In his famous paper “Can Programming Be Liberated from the von Neumann Style”[1], he proposed some crucial issues of von Neumann languages which can be summarized as follows:</p>
+<p>a) Von Neumann languages are flabby, complex, and inflexible.<br>b) Their semantics are too closely coupled to the state which makes it hard to reason about programs.<br>c) They lack expressive power. They’re unable to effectively use powerful combining forms for building new programs from existing ones.</p>
+<p>He found that this kind of programming style is closely related to von Neumann architecture of computer systems where the word-at-a-time tube connecting the CPU and the store. Hence, this kind of language “concerns itself with this word-at-a-time traffic through the bottleneck rather than with the larger conceptual units of our problems.” It’s too detailed and over-controlled but lose the big picture of problem-solving. It splits programing into two worlds: “an orderly world of expressions, a world that has useful algebraic properties” and “a disorderly world of statements, with few useful mathematical properties.” A program is a sequence of statements. Programmers have to teach computers how to solve a problem in very detail which is terrible when dealing with large-scale and complex problems.</p>
+<p>In addition to pointing out the issues of von Neumann languages, he proposed an alternative functional style of programming which aims to avoid all of the above problems. In his word, it’s supposed to be a language having a small framework which could accommodate a great variety of powerful features entirely as changeable parts. It doesn’t have side effects. It’s easy to combine existing functions to form a new one. It should overcome the history-sensitive problem of lambda-calculus languages. So “Applicative state transition” (AST) systems were proposed as history-sensitive alternatives to von Neumann systems. </p>
+<p>I regard his contributions in this paper as follows: He summarized the major issues of von Neumann languages which were monopolistic at that time. He proposed many important programming concepts as well as a formal functional programming (FFP) system. Overall, what he mentioned are quite to the point and widely accepted today. I think his work has pushed forward the rise of functional programming. However, his arguments were still not quite complete as he ignored some obvious advantages (e.g., performance) of von Neumann languages which are exactly the disadvantages of functional language. Of course, because of the historic limitations, he couldn’t forecast the boom years of object-oriented programming (OOP) which has saved von Neumann languages in some sense.</p>
+<p>Furthermore, I think his early work indicated some beliefs or natures of programming language. As said, programming language is designed for humans, but happens to be able to run on machines. I agree a good programming language should help liberate programmers’ creativity and make programmers focus on high-level aspects (e.g., strategy, framework, etc.) of problem-solving. With the rapid development of hardware performance, programmers’ time becomes much more important than machines’ running time in most scenarios. I believe this trend will inevitably continue and we will have more advanced (e.g., abstract, intelligent, etc.) programming languages in the future which make programmers much more like a program designer than a program writer. All the low-level stuff in current programming practice will be hidden from programmers and automatically finished by machines. As the daily problems programmers may deal with become more and more complex, programmers should be liberated from controlling the very detail of a software and focus more on high-level reasoning of a software.</p>
+<p>Based on our beliefs or expectations of programming language, mainstream programming language in the feature should have a concise and elegant framework, have the strong expressive power to model the world effectively and naturally as well as being user-friendly. A high-level programming language should be away from hardware but close to logic and problem-solving. This kind of programming language becomes an assistant of a programmer, while as a programmer, our job is to tell machines what should be done to solve the problem instead of how to solve the problem step by step. We can see that many of the above ideas can be found explicitly or implicitly in Backus’s paper.</p>
+<h2 id="references"><a href="#references" class="headerlink" title="references"></a>references</h2><p><a href="http://dl.acm.org/citation.cfm?id=359579" target="_blank" rel="external">[1] Can Programming Be Liberated from the von Neumann Style.</a></p>
             
                 
 
@@ -263,7 +265,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Artificial-Intelligence/">Artificial Intelligence</a> <a class="tag tag--primary tag--small t-link" href="/tags/Computer-Science/">Computer Science</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Computer-Science/">Computer Science</a> <a class="tag tag--primary tag--small t-link" href="/tags/Programming-Language/">Programming Language</a>
 
             </div>
         
@@ -272,7 +274,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/24/pl/"  data-tooltip="Two ways of thinking about programming language">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -280,7 +282,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/17/moores_law/" data-tooltip="Moore&#39;s Law">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/21/turing_test/" data-tooltip="Can AlphaGo pass the Turing test?">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -295,17 +297,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/05/21/turing_test/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/05/24/pl/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/05/21/turing_test/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/05/24/pl/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/05/21/turing_test/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/05/24/pl/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -351,7 +353,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/24/pl/"  data-tooltip="Two ways of thinking about programming language">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -359,7 +361,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/17/moores_law/" data-tooltip="Moore&#39;s Law">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/21/turing_test/" data-tooltip="Can AlphaGo pass the Turing test?">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -374,17 +376,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/05/21/turing_test/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/05/24/pl/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/05/21/turing_test/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/05/24/pl/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/05/21/turing_test/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/05/24/pl/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -410,17 +412,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/05/21/turing_test/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/05/24/pl/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/05/21/turing_test/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/05/24/pl/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/05/21/turing_test/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/05/24/pl/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>

@@ -4,13 +4,12 @@ layout: post
 title: "Can AlphaGo pass the Turing test?"
 date: 2016-5-21 22:00
 slug: Can AlphaGo Pass the Turing Test
-categories: Thinking Beyond Technology
+categories: Computer Science
 tags:
-- Thinking
-- Technology
+- Computer Science
 - Artificial Intelligence
 description: Can AlphaGo pass the Turing test?
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/turing_test.jpg
 metaAlignment: center
 coverMeta: out

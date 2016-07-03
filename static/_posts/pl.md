@@ -9,7 +9,7 @@ tags:
 - Computer Science
 - Programming Language
 description: Two ways of thinking about programming language
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/pl.jpg
 metaAlignment: center
 coverMeta: out

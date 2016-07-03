@@ -6,23 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="ThinkAloud">
-    <title>Simplicity: The philosophy of choosing a good model - ThinkAloud</title>
+    <title>Communication skills - ThinkAloud</title>
     <meta name="author" content="Hugo Chan">
     
     
-    <meta name="description" content="Simplicity - The philosophy of choosing a good model">
+    <meta name="description" content="Communication Skills">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Simplicity: The philosophy of choosing a good model">
-<meta property="og:url" content="http://blog.hugochan.net/2016/01/29/simplicity_model/index.html">
+<meta property="og:title" content="Communication skills">
+<meta property="og:url" content="http://blog.hugochan.net/2016/02/29/communication skills/index.html">
 <meta property="og:site_name" content="ThinkAloud">
-<meta property="og:description" content="Simplicity - The philosophy of choosing a good model">
-<meta property="og:image" content="http://blog.hugochan.net/images/regression_problem.png">
-<meta property="og:image" content="http://blog.hugochan.net/images/simple_model.png">
-<meta property="og:image" content="http://blog.hugochan.net/images/complex_model.png">
-<meta property="og:updated_time" content="2016-02-29T04:14:43.000Z">
+<meta property="og:description" content="Communication Skills">
+<meta property="og:image" content="http://blog.hugochan.net/images/how_to_use_a_paper_tower.png">
+<meta property="og:updated_time" content="2016-03-13T07:45:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Simplicity: The philosophy of choosing a good model">
-<meta name="twitter:description" content="Simplicity - The philosophy of choosing a good model">
+<meta name="twitter:title" content="Communication skills">
+<meta name="twitter:description" content="Communication Skills">
     
         <meta rel="publisher" content="https://plus.google.com/114357473231026680000"/>
     
@@ -32,8 +30,8 @@
     
     
     
-        <meta property="og:image" content="/2016/01/29/simplicity_model/http://blog.hugochan.net/images/simplicity_model.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://blog.hugochan.net/2016/01/29/simplicity_model/http://blog.hugochan.net/images/simplicity_model.png" />
+        <meta property="og:image" content="/2016/02/29/communication skills/http://blog.hugochan.net/images/communication.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://blog.hugochan.net/2016/02/29/communication skills/http://blog.hugochan.net/images/communication.png" />
     
     
     <!--STYLES-->
@@ -211,7 +209,7 @@
         <div class="post-header-cover
                     text-center
                     "
-             style="background-image:url('http://blog.hugochan.net/images/simplicity_model.png');"
+             style="background-image:url('http://blog.hugochan.net/images/communication.png');"
              data-behavior="3">
             
         </div>
@@ -227,19 +225,19 @@
         <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title" itemprop="headline">
-            Simplicity: The philosophy of choosing a good model
+            Communication skills
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Jan 29 2016 20:30:00 GMT-0500">
+    <time itemprop="datePublished" content="Mon Feb 29 2016 00:30:00 GMT+0800">
 	
-		    Jan 29, 2016
+		    Feb 29, 2016
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Computer-Science/">Computer Science</a>
+    <a class="category-link" href="/categories/By-talk/">By-talk</a>
 
 
     
@@ -249,16 +247,13 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <!-- excerpt --></p>
-<p>How to choose a good model is always a big problem for machine learning technologies. I will show you simplicity is a practical guidance. Let’s begin with a simple problem. Here we have 10 data points<sup>Fig (a)</sup>. Could you figure out a function which can fit these data points well and have the ability of predicting unseen data?</p>
-<p><img src="http://blog.hugochan.net/images/regression_problem.png" alt="Fig (a) a regression problem"></p>
-<h2 id="Fig__28a_29_a_regression_problem"><a href="#Fig__28a_29_a_regression_problem" class="headerlink" title="<center>Fig (a) a regression problem</center>"></a><center>Fig (a) a regression problem</center></h2><p>Well, a regression problem. As for this data set, we may find multiple models to fit it. Among them, the simplest model might be a linear model<sup>Fig (b)</sup>. It may look like this. A much more complex model might be a 9th-order polynomial model<sup>Fig (c)</sup> which fits the data set exactly like this. Here comes some questions. Which is the better model for this regression problem? Which model is more likely to generalize well to unseen data?  Which model is more likely to be true?</p>
-<p><img src="http://blog.hugochan.net/images/simple_model.png" alt="Fig (b) a simple model"></p>
-<h2 id="Fig__28b_29_a_simple_model"><a href="#Fig__28b_29_a_simple_model" class="headerlink" title="<center>Fig (b) a simple model</center>"></a><center>Fig (b) a simple model</center></h2><p><img src="http://blog.hugochan.net/images/complex_model.png" alt="Fig (c) a complex model"></p>
-<h2 id="Fig__28c_29_a_complex_model"><a href="#Fig__28c_29_a_complex_model" class="headerlink" title="<center>Fig (c) a complex model</center>"></a><center>Fig (c) a complex model</center></h2><p>Actually, we don’t know the exact answers. Without more information about the underlying real-world phenomenon, either model would be true. The 9th-order polynomial model fits the data set exactly, that’s good, while the linear model isn’t an exact fit probably because there is some random noise added to the data set, thus, essentially, the linear model might be a good enough model, too.</p>
-<p>Well, either model would be true, that’s not good. Fortunately, there is a rule of thumb, not always right but quite useful. We prefer simple models than complex models. In other words, if a simple model can get the work done, we won’t bother to look for a complex model. We always start from a simple model. The idea behind it is a complex model is more likely to be overfitting which means it’s less likely to generalize well to unseen data. I remember Johnny von Neumann used to say, with four parameters I can fit an elephant, and with five I can make him wiggle his trunk. What he meant was it’s not surprising that a complex model can fit the data quite well. Just think about the 9th-order polynomial model I mentioned above, it can exactly fit the data set which has 10 data points. But that’s not surprising at all. We suspect this complex model is more likely to have trouble generalizing to unseen data. However, it’s surprising to us if a simple model can fit the data well because it’s not easy to occur by chance. We suspect this simple model might imply some essential ideas of the underlying real-world phenomenon thus it can generalize to unseen data well. </p>
-<p>Again, not always right but quite useful. Start from a simple model. If it doesn’t generalize to unseen data well, then try some more complex models.</p>
-<p>Last question, how to test whether a model generalizes well? There is a straightforward approach. Just split your data set into a training set and a validation set. Train you model on the training set, and validate its generalization performance on the validation set, then choose the model which is simple enough and does the work well.</p>
-<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a href="http://neuralnetworksanddeeplearning.com/chap3.html" target="_blank" rel="external">[1] Neural Networks and Deep Learning - Improving the way neural networks learn</a></p>
+<p>How to express ideas clearly and even persuasively in a limited time is always what I’m curious about. That’s helpful, right? With that skill, you can easily get founding, pass a job interview or any other thing you can imagine. At least, you’ll be a great communicator. With that question, I searched TED talks under 6 minutes and finally got this one, “How to use a paper tower?”, which is one of the most persuasive TED talks under 6 minutes. Actually, it’s only around 4 and a half minutes. So, let’s explore how it magically works.</p>
+<p>Well, we all use paper towers every day, the speaker showed us his way to use paper towers which can save hundreds of millions pounds of papers every year if every American people can follow it. Sounds attractive, right? That’s the first secret, attracting people in the first time. Otherwise, people might get impatient and you lose a half chance. There’re many ways to attract people quickly. What he adopted here is listing some big numbers. People usually don’t meet big numbers in daily life, so that’s a good way to attract them.</p>
+<p>Second important rule here is do NOT overwhelm your audience. What I like about the speaker is he only gave two keywords to audience: shake and fold. Shake means you shake your hands to get rid of water, while fold means you fold paper towels and wipe your hands. It’s pretty much simple. It should be as you don’t want to overwhelm your audience.</p>
+<p>Actually, there’re many other skills we can learn from that short video. To not overwhelm you, I just mention one more skill he used. Repetition! The magic of repetition is it makes people more likely to keep something in mind and even accept it. There’re many ways to do repetition. The speaker showed us two of them. One is just repeating those keywords again and again. The other is doing the action, again and again. If you watch the video, you’ll find he repeated for more than 5 times. That’s crazy, but really useful.</p>
+<p>In order to verify what I said, let’s watch the video. You’ll find how the speaker attracted people in the first time, gave out two keywords and repeated them again and again.</p>
+<p><a href="https://www.ted.com/talks/joe_smith_how_to_use_a_paper_towel?language=en" target="_blank" rel="external"><img src="http://blog.hugochan.net/images/how_to_use_a_paper_tower.png" alt="How to use a paper tower"></a></p>
+<p>Well, as you can see, attracting people in the first time, listing a few keywords and repeating them for several times. Those are what we can learn from this video. They make us an effective communicator.</p>
             
                 
 
@@ -270,7 +265,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Computer-Science/">Computer Science</a> <a class="tag tag--primary tag--small t-link" href="/tags/Machine-Learning/">Machine Learning</a> <a class="tag tag--primary tag--small t-link" href="/tags/Technology/">Technology</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/By-talk/">By-talk</a> <a class="tag tag--primary tag--small t-link" href="/tags/Communication/">Communication</a>
 
             </div>
         
@@ -279,7 +274,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/18/source of intelligence/"  data-tooltip="智能的来源">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/03/13/alphago_scares_humans/"  data-tooltip="AlphaGo赢了，我们该害怕些什么？">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -287,7 +282,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/16/induction_generalization/" data-tooltip="漫谈归纳与泛化">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/18/source of intelligence/" data-tooltip="智能的来源">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -302,17 +297,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/01/29/simplicity_model/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/02/29/communication skills/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/01/29/simplicity_model/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/02/29/communication skills/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/01/29/simplicity_model/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/02/29/communication skills/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -358,7 +353,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/18/source of intelligence/"  data-tooltip="智能的来源">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/03/13/alphago_scares_humans/"  data-tooltip="AlphaGo赢了，我们该害怕些什么？">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -366,7 +361,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/16/induction_generalization/" data-tooltip="漫谈归纳与泛化">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/18/source of intelligence/" data-tooltip="智能的来源">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -381,17 +376,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/01/29/simplicity_model/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/02/29/communication skills/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/01/29/simplicity_model/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/02/29/communication skills/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/01/29/simplicity_model/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/02/29/communication skills/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -417,17 +412,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/01/29/simplicity_model/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://blog.hugochan.net/2016/02/29/communication skills/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/01/29/simplicity_model/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.hugochan.net/2016/02/29/communication skills/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/01/29/simplicity_model/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://blog.hugochan.net/2016/02/29/communication skills/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>

@@ -9,7 +9,7 @@ tags:
 - Poem
 - Love
 description: Love Song
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/love_song.jpg
 metaAlignment: center
 coverMeta: out

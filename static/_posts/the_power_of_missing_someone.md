@@ -9,7 +9,7 @@ tags:
 - Poem
 - Affection
 description: The Power of Missing Someone
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/the_power_of_missing_someone.jpg
 metaAlignment: center
 coverMeta: out

@@ -2,14 +2,14 @@
 ---
 layout: post
 title: "罗辑思维引发的思考"
-date: 2016-8-6 17:00
+date: 2016-8-19 23:00
 slug: Thinking About Learning
 categories: By-talk
 tags:
 - Thinking
 - Learning
 description: Thinking About Learning
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/thinking_about_learning.jpg
 metaAlignment: center
 coverMeta: out

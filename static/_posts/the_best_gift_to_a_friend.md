@@ -8,7 +8,7 @@ categories: By-talk
 tags:
 - Friendship
 description: The Best Gift to a Friend
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/the_best_gift_to_a_friend.jpg
 metaAlignment: center
 coverMeta: out

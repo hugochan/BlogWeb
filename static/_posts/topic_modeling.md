@@ -9,7 +9,7 @@ tags:
 - Machine Learning
 - Computer Science
 description: Topic Modeling- A Survey
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/topics.jpg
 metaAlignment: center
 coverMeta: out

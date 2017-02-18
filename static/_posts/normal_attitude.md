@@ -9,7 +9,7 @@ tags:
 - By-talk
 - Attitude
 description: Normal Attitude
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/normal_attitude.jpg
 metaAlignment: center
 coverMeta: out

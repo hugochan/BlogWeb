@@ -9,7 +9,7 @@ tags:
 - By-talk
 - Love
 description: Love It Is
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/love_it_is.jpg
 metaAlignment: center
 coverMeta: out

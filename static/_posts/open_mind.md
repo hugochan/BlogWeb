@@ -9,7 +9,7 @@ tags:
 - By-talk
 - Thinking
 description: What Is Open Minded
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/what_is_open_minded.jpg
 metaAlignment: center
 coverMeta: out

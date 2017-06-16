@@ -9,7 +9,7 @@ tags:
 - Literature
 - Love
 description: Moonlight
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/moonlight.jpg
 metaAlignment: center
 coverMeta: out

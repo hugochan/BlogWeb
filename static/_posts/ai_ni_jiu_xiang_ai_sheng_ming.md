@@ -7,7 +7,7 @@ categories: 书香园
 tags:
 - Book Review
 description: 评《爱你就像爱生命》
-thumbnailImagePosition: bottom
+thumbnailImagePosition: left
 coverImage: http://blog.hugochan.net/images/ai_ni_jiu_xiang_ai_sheng_ming.png
 metaAlignment: center
 coverMeta: out
